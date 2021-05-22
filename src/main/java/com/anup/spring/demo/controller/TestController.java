@@ -1,4 +1,4 @@
-package com.anup.spring.demo.service.controller;
+package com.anup.spring.demo.controller;
 
 import com.anup.spring.demo.request.CalculateRequest;
 import com.anup.spring.demo.response.CalculateResponse;
