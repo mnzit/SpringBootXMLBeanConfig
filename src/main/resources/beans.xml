@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="add" class="com.anup.spring.demo.context.AddContext"/>
+    <bean id="sub" class="com.anup.spring.demo.context.SubContext"/>
+    <bean id="mul" class="com.anup.spring.demo.context.MulContext"/>
+    <bean id="div" class="com.anup.spring.demo.context.DivContext"/>
+
+    <bean id="mathContextFactory" class="com.anup.spring.demo.factory.MathContextFactory">
+        <constructor-arg name="mathContexts">
+            <list>
+                <ref bean="add" />
+                <ref bean="sub" />
+                <ref bean="mul" />
+                <ref bean="div" />
+            </list>
+        </constructor-arg>
+    </bean>
+
+    <bean id="calculator" class="com.anup.spring.demo.service.Calculator">
+        <constructor-arg ref="mathContextFactory"/>
+    </bean>
+
+</beans>
