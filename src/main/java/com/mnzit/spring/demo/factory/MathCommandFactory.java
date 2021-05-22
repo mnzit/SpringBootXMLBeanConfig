@@ -17,7 +17,9 @@ public class MathCommandFactory {
 
     public MathCommandFactory(List<MathCommand> mathCommands) {
         this.mathCommands = mathCommands;
-        operators = mathCommands.stream().collect(Collectors.toMap(MathCommand::getName, Function.identity()));
+        operators = mathCommands
+                .stream()
+                .collect(Collectors.toMap(MathCommand::getName, Function.identity()));
     }
 
     public MathCommand getMathContext(String mode) {

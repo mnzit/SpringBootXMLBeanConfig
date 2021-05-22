@@ -19,19 +19,17 @@ public class Calculator {
         this.mathCommandFactory = mathCommandFactory;
     }
 
-    public CalculateResponse performCalculation(Double operator1, Double operator2, String operator) {
-        MathCommand mathCommand = mathCommandFactory.getMathContext(operator);
+    public CalculateResponse calculate(Double operator1, Double operator2, String operator) {
+        final MathCommand mathCommand = mathCommandFactory.getMathContext(operator);
         return new CalculateResponse(mathCommand.getName(), mathCommand.calculate(operator1, operator2));
     }
 
-    public List<CalculateResponse> performAllCalculation(Double operator1, Double operator2) {
+    public List<CalculateResponse> calculateAll(Double operator1, Double operator2) {
         return mathCommandFactory
                 .getAllMathContext()
                 .stream()
-                .map(
-                        context ->
-                                new CalculateResponse(context.getName(), context.calculate(operator1, operator2)
-                                )).collect(Collectors.toList());
+                .map(context -> new CalculateResponse(context.getName(), context.calculate(operator1, operator2)))
+                .collect(Collectors.toList());
     }
 
 }

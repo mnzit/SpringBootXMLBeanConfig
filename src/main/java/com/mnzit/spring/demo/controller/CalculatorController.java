@@ -27,24 +27,22 @@ public class CalculatorController {
                                        @RequestParam("operator2") Double operator2,
                                        @RequestParam("operator") String operator
     ) {
-        return calculator.performCalculation(operator1, operator2, operator);
+        return calculator.calculate(operator1, operator2, operator);
     }
 
     @GetMapping("json-body")
     public CalculateResponse calculateWithJsonRequest(@RequestBody CalculateRequest request) {
-        return calculator.performCalculation(request.getOperator1(), request.getOperator2(), request.getOperator());
+        return calculator.calculate(request.getOperator1(), request.getOperator2(), request.getOperator());
     }
 
     @GetMapping("json-body/{ops}")
     public CalculateResponse calculateWithJsonRequestAndPathVariable(@RequestBody CalculateRequest request,
                                                                      @PathVariable("ops") String operator) {
-        return calculator.performCalculation(request.getOperator1(), request.getOperator2(), operator);
+        return calculator.calculate(request.getOperator1(), request.getOperator2(), operator);
     }
 
     @GetMapping("calculate/all")
     public List<CalculateResponse> performAllCalculation(@RequestBody CalculateRequest request) {
-        return calculator.performAllCalculation(request.getOperator1(), request.getOperator2());
+        return calculator.calculateAll(request.getOperator1(), request.getOperator2());
     }
-
-
 }
