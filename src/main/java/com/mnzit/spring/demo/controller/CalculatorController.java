@@ -14,11 +14,11 @@ import java.util.List;
 @Slf4j
 @RestController
 @RequestMapping("calculator")
-public class TestController {
+public class CalculatorController {
 
     private final Calculator calculator;
 
-    public TestController(Calculator calculator) {
+    public CalculatorController(Calculator calculator) {
         this.calculator = calculator;
     }
 
@@ -27,7 +27,6 @@ public class TestController {
                                        @RequestParam("operator2") Double operator2,
                                        @RequestParam("operator") String operator
     ) {
-
         return calculator.performCalculation(operator1, operator2, operator);
     }
 
