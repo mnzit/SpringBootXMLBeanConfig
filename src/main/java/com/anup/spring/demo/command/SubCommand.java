@@ -1,11 +1,11 @@
-package com.anup.spring.demo.context;
+package com.anup.spring.demo.command;
 
 /**
  * @author Manjit Shakya <manjit.shakya@f1soft.com>
  */
-public class SubContext extends MathContext {
+public class SubCommand extends MathCommand {
 
-    public SubContext() {
+    public SubCommand() {
         super("sub");
     }
 

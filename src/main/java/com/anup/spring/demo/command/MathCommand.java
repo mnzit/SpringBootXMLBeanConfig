@@ -1,13 +1,13 @@
-package com.anup.spring.demo.context;
+package com.anup.spring.demo.command;
 
 /**
  * @author Manjit Shakya <manjit.shakya@f1soft.com>
  */
-public abstract class MathContext {
+public abstract class MathCommand {
 
     private final String name;
 
-    public MathContext(String name) {
+    public MathCommand(String name) {
         this.name = name;
     }
 

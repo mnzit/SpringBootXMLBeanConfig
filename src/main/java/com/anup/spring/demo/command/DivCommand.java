@@ -1,11 +1,11 @@
-package com.anup.spring.demo.context;
+package com.anup.spring.demo.command;
 
 /**
  * @author Manjit Shakya <manjit.shakya@f1soft.com>
  */
-public class DivContext extends MathContext {
+public class DivCommand extends MathCommand {
 
-    public DivContext() {
+    public DivCommand() {
         super("div");
     }
 
