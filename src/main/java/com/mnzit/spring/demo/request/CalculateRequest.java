@@ -1,4 +1,4 @@
-package com.anup.spring.demo.response;
+package com.mnzit.spring.demo.request;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -14,8 +14,8 @@ import java.io.Serializable;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class CalculateResponse implements Serializable {
-    private String operation;
-    private Double result;
+public class CalculateRequest implements Serializable {
+    private Double operator1;
+    private Double operator2;
+    private String operator;
 }
-

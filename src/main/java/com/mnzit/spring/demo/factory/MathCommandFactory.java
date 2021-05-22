@@ -1,6 +1,6 @@
-package com.anup.spring.demo.factory;
+package com.mnzit.spring.demo.factory;
 
-import com.anup.spring.demo.command.MathCommand;
+import com.mnzit.spring.demo.command.MathCommand;
 
 import java.util.HashMap;
 import java.util.List;

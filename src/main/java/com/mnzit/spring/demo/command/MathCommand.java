@@ -1,4 +1,4 @@
-package com.anup.spring.demo.command;
+package com.mnzit.spring.demo.command;
 
 /**
  * @author Manjit Shakya <manjit.shakya@f1soft.com>

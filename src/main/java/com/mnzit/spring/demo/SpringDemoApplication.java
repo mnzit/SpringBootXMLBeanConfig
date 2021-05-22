@@ -1,4 +1,4 @@
-package com.anup.spring.demo;
+package com.mnzit.spring.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

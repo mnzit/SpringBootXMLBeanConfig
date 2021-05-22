@@ -1,9 +1,9 @@
-package com.anup.spring.demo.service;
+package com.mnzit.spring.demo.service;
 
 
-import com.anup.spring.demo.command.MathCommand;
-import com.anup.spring.demo.factory.MathCommandFactory;
-import com.anup.spring.demo.response.CalculateResponse;
+import com.mnzit.spring.demo.command.MathCommand;
+import com.mnzit.spring.demo.factory.MathCommandFactory;
+import com.mnzit.spring.demo.response.CalculateResponse;
 
 import java.util.List;
 import java.util.stream.Collectors;

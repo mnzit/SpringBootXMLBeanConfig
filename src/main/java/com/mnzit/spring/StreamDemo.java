@@ -1,4 +1,4 @@
-package com.anup.spring;
+package com.mnzit.spring;
 
 import java.util.ArrayList;
 import java.util.Arrays;

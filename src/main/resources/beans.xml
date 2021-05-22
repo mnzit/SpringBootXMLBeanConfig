@@ -3,12 +3,12 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="add" class="com.anup.spring.demo.command.AddCommand"/>
-    <bean id="sub" class="com.anup.spring.demo.command.SubCommand"/>
-    <bean id="mul" class="com.anup.spring.demo.command.MulCommand"/>
-    <bean id="div" class="com.anup.spring.demo.command.DivCommand"/>
+    <bean id="add" class="com.mnzit.spring.demo.command.AddCommand"/>
+    <bean id="sub" class="com.mnzit.spring.demo.command.SubCommand"/>
+    <bean id="mul" class="com.mnzit.spring.demo.command.MulCommand"/>
+    <bean id="div" class="com.mnzit.spring.demo.command.DivCommand"/>
 
-    <bean id="mathCommandFactory" class="com.anup.spring.demo.factory.MathCommandFactory">
+    <bean id="mathCommandFactory" class="com.mnzit.spring.demo.factory.MathCommandFactory">
         <constructor-arg name="mathCommands">
             <list>
                 <ref bean="add" />
@@ -19,7 +19,7 @@
         </constructor-arg>
     </bean>
 
-    <bean id="calculator" class="com.anup.spring.demo.service.Calculator">
+    <bean id="calculator" class="com.mnzit.spring.demo.service.Calculator">
         <constructor-arg ref="mathCommandFactory"/>
     </bean>
 

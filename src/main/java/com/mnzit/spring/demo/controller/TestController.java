@@ -1,8 +1,8 @@
-package com.anup.spring.demo.controller;
+package com.mnzit.spring.demo.controller;
 
-import com.anup.spring.demo.request.CalculateRequest;
-import com.anup.spring.demo.response.CalculateResponse;
-import com.anup.spring.demo.service.Calculator;
+import com.mnzit.spring.demo.request.CalculateRequest;
+import com.mnzit.spring.demo.response.CalculateResponse;
+import com.mnzit.spring.demo.service.Calculator;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
