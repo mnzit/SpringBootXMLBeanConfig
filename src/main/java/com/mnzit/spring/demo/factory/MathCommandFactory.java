@@ -1,6 +1,8 @@
 package com.mnzit.spring.demo.factory;
 
+import com.mnzit.spring.demo.annotations.Command;
 import com.mnzit.spring.demo.command.MathCommand;
+import com.mnzit.spring.demo.enums.MathCommandType;
 
 import java.util.List;
 import java.util.Map;
@@ -13,16 +15,24 @@ import java.util.stream.Collectors;
 public class MathCommandFactory {
 
     private final List<MathCommand> mathCommands;
-    private final Map<String, MathCommand> operators;
+    private final Map<MathCommandType, MathCommand> operators;
 
     public MathCommandFactory(List<MathCommand> mathCommands) {
         this.mathCommands = mathCommands;
         operators = mathCommands
                 .stream()
-                .collect(Collectors.toMap(MathCommand::getName, Function.identity()));
+                .collect(
+                        Collectors.toMap(
+                                command -> command
+                                        .getClass()
+                                        .getAnnotation(Command.class)
+                                        .type(),
+                                Function.identity()
+                        )
+                );
     }
 
-    public MathCommand getMathContext(String mode) {
+    public MathCommand getMathContext(MathCommandType mode) {
         return operators.get(mode);
     }
 

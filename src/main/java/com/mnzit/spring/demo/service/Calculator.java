@@ -1,7 +1,8 @@
 package com.mnzit.spring.demo.service;
 
-
+import com.mnzit.spring.demo.annotations.Command;
 import com.mnzit.spring.demo.command.MathCommand;
+import com.mnzit.spring.demo.enums.MathCommandType;
 import com.mnzit.spring.demo.factory.MathCommandFactory;
 import com.mnzit.spring.demo.response.CalculateResponse;
 
@@ -19,16 +20,22 @@ public class Calculator {
         this.mathCommandFactory = mathCommandFactory;
     }
 
-    public CalculateResponse calculate(Double operator1, Double operator2, String operator) {
+    public CalculateResponse calculate(Double operator1, Double operator2, MathCommandType operator) {
         final MathCommand mathCommand = mathCommandFactory.getMathContext(operator);
-        return new CalculateResponse(mathCommand.getName(), mathCommand.calculate(operator1, operator2));
+        return new CalculateResponse(operator.name(), mathCommand.calculate(operator1, operator2));
     }
 
     public List<CalculateResponse> calculateAll(Double operator1, Double operator2) {
         return mathCommandFactory
                 .getAllMathContext()
                 .stream()
-                .map(context -> new CalculateResponse(context.getName(), context.calculate(operator1, operator2)))
+                .map(context -> new CalculateResponse(
+                context
+                        .getClass()
+                        .getAnnotation(Command.class)
+                        .type()
+                        .name(),
+                context.calculate(operator1, operator2)))
                 .collect(Collectors.toList());
     }
 

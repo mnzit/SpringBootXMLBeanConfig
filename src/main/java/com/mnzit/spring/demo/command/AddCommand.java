@@ -1,13 +1,13 @@
 package com.mnzit.spring.demo.command;
 
+import com.mnzit.spring.demo.annotations.Command;
+import com.mnzit.spring.demo.enums.MathCommandType;
+
 /**
  * @author Manjit Shakya <manjit.shakya@f1soft.com>
  */
+@Command(type = MathCommandType.ADD)
 public class AddCommand extends MathCommand {
-
-    public AddCommand() {
-        super("add");
-    }
 
     @Override
     public Double calculate(Double x, Double y) {

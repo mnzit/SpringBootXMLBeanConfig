@@ -1,5 +1,6 @@
 package com.mnzit.spring.demo.controller;
 
+import com.mnzit.spring.demo.enums.MathCommandType;
 import com.mnzit.spring.demo.request.CalculateRequest;
 import com.mnzit.spring.demo.response.CalculateResponse;
 import com.mnzit.spring.demo.service.Calculator;
@@ -25,7 +26,7 @@ public class CalculatorController {
     @GetMapping
     public CalculateResponse calculate(@RequestParam("operator1") Double operator1,
                                        @RequestParam("operator2") Double operator2,
-                                       @RequestParam("operator") String operator
+                                       @RequestParam("operator") MathCommandType operator
     ) {
         return calculator.calculate(operator1, operator2, operator);
     }
@@ -37,7 +38,7 @@ public class CalculatorController {
 
     @GetMapping("json-body/{ops}")
     public CalculateResponse calculateWithJsonRequestAndPathVariable(@RequestBody CalculateRequest request,
-                                                                     @PathVariable("ops") String operator) {
+                                                                     @PathVariable("ops") MathCommandType operator) {
         return calculator.calculate(request.getOperator1(), request.getOperator2(), operator);
     }
 
