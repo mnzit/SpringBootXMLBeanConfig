@@ -7,5 +7,6 @@ public enum MathCommandType {
     ADD,
     SUB,
     MUL,
-    DIV
+    DIV,
+    POW
 }
