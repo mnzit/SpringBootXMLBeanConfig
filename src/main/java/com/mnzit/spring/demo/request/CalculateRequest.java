@@ -1,5 +1,6 @@
 package com.mnzit.spring.demo.request;
 
+import com.mnzit.spring.demo.enums.MathCommandType;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -17,5 +18,5 @@ import java.io.Serializable;
 public class CalculateRequest implements Serializable {
     private Double operator1;
     private Double operator2;
-    private String operator;
+    private MathCommandType operator;
 }

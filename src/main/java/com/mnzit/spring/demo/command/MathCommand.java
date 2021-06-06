@@ -5,15 +5,5 @@ package com.mnzit.spring.demo.command;
  */
 public abstract class MathCommand {
 
-    private final String name;
-
-    public MathCommand(String name) {
-        this.name = name;
-    }
-
-    public String getName() {
-        return name;
-    }
-
     public abstract Double calculate(Double x, Double y);
 }

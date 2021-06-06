@@ -6,11 +6,11 @@ import com.mnzit.spring.demo.enums.MathCommandType;
 /**
  * @author Manjit Shakya <manjit.shakya@f1soft.com>
  */
-@Command(type = MathCommandType.ADD)
-public class AddCommand extends MathCommand {
+@Command(type = MathCommandType.POW)
+public class PowerCommand extends MathCommand {
 
     @Override
     public Double calculate(Double x, Double y) {
-        return x + y;
+        return Math.pow(x, y);
     }
 }
