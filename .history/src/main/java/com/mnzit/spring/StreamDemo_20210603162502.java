@@ -40,10 +40,10 @@ public class StreamDemo {
                 .forEach(System.out::println);
 
 
-       final List<String> startWithA =
-               stringStream.filter((name) -> name.startsWith("a")).collect(Collectors.toList());
-
-       System.out.println(startWithA);
+//        final List<String> startWithA =
+//                stringStream.filter((name) -> name.startsWith("a")).collect(Collectors.toList());
+//
+//        System.out.println(startWithA);
 
         List<Integer> numbers = new ArrayList<>();
         numbers.add(1);
