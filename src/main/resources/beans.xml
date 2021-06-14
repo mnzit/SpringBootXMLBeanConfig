@@ -25,4 +25,41 @@
         <constructor-arg ref="mathCommandFactory"/>
     </bean>
 
+    <bean id="student1" class="com.mnzit.spring.demo.models.Student">
+        <property name="id" value="1"/>
+        <property name="name" value="Anup"/>
+        <property name="address" value="USA"/>
+        <property name="contactNo" value="908712312"/>
+    </bean>
+
+    <bean id="student2" class="com.mnzit.spring.demo.models.Student">
+        <property name="id" value="2"/>
+        <property name="name" value="Manjit"/>
+        <property name="address" value="Nepal"/>
+        <property name="contactNo" value="9808546858"/>
+    </bean>
+
+    <bean id="studentService" class="com.mnzit.spring.demo.service.StudentService">
+        <property name="studentMap">
+            <map>
+                <entry key="1" value-ref="student1"/>
+                <entry key="2" value-ref="student2"/>
+            </map>
+        </property>
+    </bean>
+
+    <bean id="colorService" class="com.mnzit.spring.demo.service.ColorService">
+        <property name="colors">
+            <list>
+                <value>Red</value>
+                <value>Aero blue</value>
+                <value>Acid Green</value>
+                <value>Amazon</value>
+                <value>Red</value>
+                <value>Blue</value>
+                <value>Purple</value>
+                <value>Pink</value>
+            </list>
+        </property>
+    </bean>
 </beans>
